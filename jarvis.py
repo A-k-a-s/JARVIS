@@ -11,12 +11,12 @@ voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
 engine.setProperty('rate', 180)
 
-
+#this function will speak whatever you say.
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
-
+# this function will greet you according to time of the day
 def wishme():
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour < 12:
@@ -27,7 +27,7 @@ def wishme():
         speak("good evening sir")
     speak("this is jarvis how may i help you")
 
-
+#this function will listen to your command and convert it into string and display in console.
 def takecommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -46,6 +46,7 @@ def takecommand():
         return "None"
     return query
 
+#function to send email
 def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
@@ -54,6 +55,7 @@ def sendEmail(to, content):
     server.sendmail('youremail@gmail.com', to, content)
     server.close()
 
+#rest is self explanatory.
 if __name__ == '__main__':
     wishme()
     while True:

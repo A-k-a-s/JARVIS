@@ -85,11 +85,11 @@ if __name__ == '__main__':
             chromepath = "C:\\Users\\Dell\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe"
             os.startfile(chromepath)
 
-        elif 'email to harry' in query:
+        elif 'email to akash' in query:
             try:
                 speak("What should I say?")
                 content = takeCommand()
-                to = "harryyourEmail@gmail.com"
+                to = "yourEmail@gmail.com"
                 sendEmail(to, content)
                 speak("Email has been sent!")
             except Exception as e:
